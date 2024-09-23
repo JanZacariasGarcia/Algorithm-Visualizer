@@ -1,4 +1,8 @@
+import java.io.IOException;
+
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCombination;
@@ -10,17 +14,17 @@ import javafx.stage.Stage;
 
 public class AlgorithmVisualizer extends Application {
     @Override
-    public void start(Stage primaryStage) {
-        BorderPane root = new BorderPane();
-        Scene scene = new Scene(root, 800, 600, Color.DARKBLUE);
-        Image icon = new Image("VisualizerIcon.png");
+    public void start(Stage primaryStage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("mainScene.fxml"));
+        Scene scene = new Scene(root);
+        Image icon = new Image("GraphVisualizerIcon.png");
         primaryStage.getIcons().add(icon);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Algorithm Visualizer");
-        primaryStage.setWidth(1400);
-        primaryStage.setHeight(900);
-        primaryStage.setX(50);
-        primaryStage.setY(50);
+        // primaryStage.setWidth(1400);
+        // primaryStage.setHeight(900);
+        // primaryStage.setX(50);
+        // primaryStage.setY(50);
         // Text text = new Text();
         // text.setText("Small");
         // text.setX(50);
