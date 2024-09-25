@@ -1,10 +1,17 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class ControlPanel{
@@ -12,6 +19,8 @@ public class ControlPanel{
     private Button logout;
     @FXML
     private AnchorPane scenePane;
+    @FXML
+    private static BorderPane BorderPane;
     
     Stage stage;
 
@@ -26,6 +35,11 @@ public class ControlPanel{
         System.out.println("You successfully logged out");
         stage.close();
         }
+    }
+    
+    public static void BarChart (int[] array){
+       
+        
     }
     
     public void small(ActionEvent e){
