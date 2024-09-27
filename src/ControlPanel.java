@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -37,12 +38,11 @@ public class ControlPanel{
     @FXML
     public void initialize() {
         // Initial data for the chart
-        array.add(3);
-        array.add(7);
-        array.add(1);
-        array.add(6);
-        array.add(4);
-
+        Random rand = new Random();
+        //populate array with corresponding size
+        for (int i = 0; i < 50; i++){
+             array.add(rand.nextInt(99)+1);
+        }
         // Draw the initial chart on top of the FXML components
         drawBarChart();
     }
@@ -73,9 +73,9 @@ public class ControlPanel{
             scenePane.getChildren().add(bar);
 
             // Add text labels below the bars
-            Text label = new Text(i * barWidth + 100, chartHeight + 180, String.valueOf(array.get(i)));
-            label.setFill(Color.WHITE);
-            scenePane.getChildren().add(label);
+            // Text label = new Text(i * barWidth + 80, chartHeight + 180, String.valueOf(array.get(i)));
+            // label.setFill(Color.WHITE);
+            // scenePane.getChildren().add(label);
         }
     }
 

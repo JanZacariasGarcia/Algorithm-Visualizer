@@ -52,7 +52,7 @@ public class AlgorithmVisualizer extends Application {
         // primaryStage.setFullScreen(true);
         // primaryStage.setFullScreenExitHint("");
         // primaryStage.setFullScreenExitKeyCombination(KeyCombination.valueOf("I"));
-        primaryStage.setResizable(true);
+        primaryStage.setResizable(false);
         primaryStage.show();
     }
 
