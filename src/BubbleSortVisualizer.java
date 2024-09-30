@@ -1,31 +1,54 @@
+import java.util.List;
+
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.util.Duration;
+
 public class BubbleSortVisualizer {
-    private int[] array;
-    // Constructor, getters, and setters
-    public BubbleSortVisualizer(int array[]){
-        this.array = array;
-    }
-    public int [] getSortedArray(int array[]){
-        sort(array);
-        return array;
-    }
+        
+        public static void sort(List<Integer> array, ControlPanel controlPanel) {
+            // Implement Bubble Sort and update visualization
+            Timeline timeline = new Timeline();
+            int arraySize = array.size();
+            int[] step = {0}; // Keep track of the sorting step
 
-    private int[] sort(int [] array) {
-        // Implement Bubble Sort and update visualization
-
-        int temp = 0;
-        for (int i = 0; i < array.length -1; i++){
-            for (int j = 0; j < array.length - 1 - i; j++){
-                if (array[j] > array[j+1]){
-                    temp = array[j];
-                    array[j] = array[j+1];
-                    array[j+1] = temp;
-                }
-            }   
+            // Outer loop to simulate bubble sort steps
+            for (int i = 0; i < arraySize - 1; i++) {
+                for (int j = 0; j < arraySize - 1 - i; j++) {
+                    // Inner loop with sorting logic and visualization update
+                    final int currentJ = j; //final variable inside lambda
+                
+                    timeline.getKeyFrames().add(new KeyFrame(Duration.millis(1 * step[0]), e -> {
+                    if (array.get(currentJ) > array.get(currentJ + 1)) {
+                        // Swap elements
+                        int temp = array.get(currentJ);
+                        array.set(currentJ, array.get(currentJ + 1));
+                        array.set(currentJ + 1, temp);
+                    }
+                    // Redraw the bar chart after each swap or comparison
+                    controlPanel.drawBarChart();
+                }));
+                step[0]++;
+            }
         }
-        return array;
-    }
 
-    private void updateVisualization() {
-        // Code to update the visual representation
+        timeline.setCycleCount(step[0]); // Number of steps in the sorting
+        timeline.play(); // Start the sorting animation
+            // int temp = 0;
+            // for (int i = 0; i < array.size() -1; i++){
+            //     for (int j = 0; j < array.size() - 1 - i; j++){
+            //         if (array.get(j) > array.get(j+1)){
+            //             temp = array.get(j);
+            //             array.set(j, array.get(j+1));
+            //             array.set(j+1, temp);
+            //             controlPanel.drawBarChart();
+            //         }
+            //     }   
+            // }
+            
+            // return array;
+        }
+        private static void updateVisualization() {
+            
     }
 }
