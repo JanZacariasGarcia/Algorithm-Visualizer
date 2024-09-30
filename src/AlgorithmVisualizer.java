@@ -25,11 +25,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class AlgorithmVisualizer extends Application {
-
-    public static int len = 0;
-
-
-
     @Override
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("mainScene.fxml"));
@@ -59,22 +54,11 @@ public class AlgorithmVisualizer extends Application {
     public static void main(String[] args) {
         // launch(args);
         Application.launch(args);
-        int[] array = arrayInit();
         // BubbleSortVisualizer array = new BubbleSortVisualizer(arrayi);
         // int [] abc = array.getSortedArray(arrayi);
         // for (int i : abc){
         //     System.out.print(i + " ");
         // }
         
-    }
-
-    public static int[] arrayInit() {
-        Random rand = new Random();
-        int array[] = new int[len];
-        //populate array with corresponding size
-        for (int i = 0; i < array.length; i++){
-            array[i] = rand.nextInt(100);
-        }
-        return array;
     }
 }

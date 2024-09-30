@@ -65,7 +65,7 @@ public class ControlPanel{
             Rectangle bar = new Rectangle();
             bar.setX(i * barWidth + 80); // Position the bar horizontally
             bar.setY(chartHeight - barHeight + 150); // Position the bar vertically
-            bar.setWidth(barWidth - 10); // Set the width of the bar
+            bar.setWidth(barWidth - 2); // Set the width of the bar
             bar.setHeight(barHeight); // Set the height of the bar
             bar.setFill(Color.WHITE); // Set the color of the bar
 
@@ -104,13 +104,16 @@ public class ControlPanel{
     }
     
     public void small(ActionEvent e){
-        AlgorithmVisualizer.len = 50;
+        int length = 50;
+        updateBarChart(length);
     }
     public void medium(ActionEvent e){
-        AlgorithmVisualizer.len = 100;
+        int length = 100;
+        updateBarChart(length);
     }
     public void large (ActionEvent e){
-        AlgorithmVisualizer.len = 150;
+        int length = 200;
+        updateBarChart(length);
     }
     public void bb (ActionEvent e){
         
@@ -124,8 +127,15 @@ public class ControlPanel{
     public void startSort (ActionEvent e){
 
     }
-    public static void updateBarChart(int[] array){
-        
+    public  void updateBarChart(int len){
+        array.clear();
+        Random rand = new Random();
+        //populate array with corresponding size
+        for (int i = 0; i < len; i++){
+             array.add(rand.nextInt(99)+1);
+        }
+
+        drawBarChart();
 
     }
 }
