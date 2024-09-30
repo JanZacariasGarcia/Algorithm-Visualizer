@@ -120,7 +120,7 @@ public class ControlPanel{
         BubbleSortVisualizer.sort(array, this);
     }
     public void ins (ActionEvent e){
-
+        InsertionSortVisualizer.sort(array,this);
     }
     public void mer (ActionEvent e){
 

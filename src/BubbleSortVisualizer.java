@@ -29,11 +29,15 @@ public class BubbleSortVisualizer {
                     controlPanel.drawBarChart();
                 }));
                 step[0]++;
+                if (step[0] >= array.size()) {
+                    timeline.stop(); // Stop the timeline once sorting is complete
+                }
             }
         }
 
-        timeline.setCycleCount(step[0]); // Number of steps in the sorting
-        timeline.play(); // Start the sorting animation
+        timeline.setCycleCount(step[0]);
+        timeline.play(); 
+        // Start the sorting animation
             // int temp = 0;
             // for (int i = 0; i < array.size() -1; i++){
             //     for (int j = 0; j < array.size() - 1 - i; j++){
@@ -48,7 +52,4 @@ public class BubbleSortVisualizer {
             
             // return array;
         }
-        private static void updateVisualization() {
-            
-    }
 }
