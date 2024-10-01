@@ -21,11 +21,6 @@ public class InsertionSortVisualizer {
 
         KeyFrame keyFrame = new KeyFrame(Duration.millis(1), e -> {
             // Inner loop logic: shifting elements
-            if (i[0] >= array.size() - 2) {
-                timeline.stop(); // Stop the timeline after sorting is complete
-                controlPanel.drawBarChart(Color.GREEN); // Draw the chart in green after sorting
-                return;
-            }
             if (j[0] >= 0 && array.get(j[0]) > temp[0]) {
                 // Shift element one position to the right
                 array.set(j[0] + 1, array.get(j[0]));
@@ -38,6 +33,8 @@ public class InsertionSortVisualizer {
                 // Check if sorting is complete
                 if (i[0] >= array.size()) {
                     timeline.stop(); // Stop the timeline once sorting is complete
+                    controlPanel.drawBarChart(Color.GREEN); // Draw the chart in green after sorting
+                    return;
                 } else {
                     // Reset the temp value and j for the next iteration of outer loop
                     temp[0] = array.get(i[0]);
