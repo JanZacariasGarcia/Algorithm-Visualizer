@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -45,11 +46,11 @@ public class ControlPanel{
                  array.add(rand.nextInt(99)+1);
             }
             // Draw the initial chart on top of the FXML components
-            drawBarChart();
+            drawBarChart(Color.WHITE);
         }
     
         // Function to draw the bar chart
-        public void drawBarChart() {
+        public void drawBarChart(Color color) {
             int chartWidth = 1000; // Total width of the chart area
             int chartHeight = 300; // Total height of the chart area
             int barWidth = chartWidth / array.size(); // Width of each bar
@@ -68,7 +69,7 @@ public class ControlPanel{
                     bar.setY(chartHeight - barHeight + 150); // Position the bar vertically
                     bar.setWidth(barWidth - 2); // Set the width of the bar
                     bar.setHeight(barHeight); // Set the height of the bar
-                    bar.setFill(Color.WHITE); // Set the color of the bar
+                    bar.setFill(color); // Set the color of the bar
         
                     // Add the bar to the scenePane (AnchorPane from FXML)
                     scenePane.getChildren().add(bar);
@@ -116,14 +117,16 @@ public class ControlPanel{
         length = 200;
         updateBarChart();
     }
-    public void bb (ActionEvent e){
+    public void bb (ActionEvent e) throws InterruptedException{
         BubbleSortVisualizer.sort(array, this);
+        // drawBarChart(Color.GREEN);
     }
-    public void ins (ActionEvent e){
+    public void ins (ActionEvent e) throws InterruptedException{
         InsertionSortVisualizer.sort(array,this);
+        // drawBarChart(Color.GREEN);
     }
-    public void mer (ActionEvent e){
-
+    public void mer (ActionEvent e) throws InterruptedException{
+        MergeSortVisualizer.sort(array, this);
     }
     public void startSort (ActionEvent e){
 
@@ -135,8 +138,7 @@ public class ControlPanel{
         for (int i = 0; i < length; i++){
              array.add(rand.nextInt(99)+1);
         }
-
-        drawBarChart();
+        drawBarChart(Color.WHITE);
 
     }
 }

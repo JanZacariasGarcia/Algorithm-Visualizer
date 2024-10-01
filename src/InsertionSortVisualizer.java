@@ -2,7 +2,7 @@ import java.util.List;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-
+import javafx.scene.paint.Color;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.util.Duration;
@@ -21,6 +21,11 @@ public class InsertionSortVisualizer {
 
         KeyFrame keyFrame = new KeyFrame(Duration.millis(1), e -> {
             // Inner loop logic: shifting elements
+            if (i[0] >= array.size() - 2) {
+                timeline.stop(); // Stop the timeline after sorting is complete
+                controlPanel.drawBarChart(Color.GREEN); // Draw the chart in green after sorting
+                return;
+            }
             if (j[0] >= 0 && array.get(j[0]) > temp[0]) {
                 // Shift element one position to the right
                 array.set(j[0] + 1, array.get(j[0]));
@@ -40,12 +45,13 @@ public class InsertionSortVisualizer {
                 }
             }
             // Redraw the bar chart for visualization
-            controlPanel.drawBarChart();
+            controlPanel.drawBarChart(Color.WHITE);
         });
 
         // Set the timeline to indefinitely repeat the steps until sorting is complete
         timeline.getKeyFrames().add(keyFrame);
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play(); // Start the animation
+        return;
     }
 }
