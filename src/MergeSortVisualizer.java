@@ -9,6 +9,7 @@ import javafx.animation.Timeline;
 import javafx.util.Duration;
 
 public class MergeSortVisualizer {
+    
     public static void sort(List<Integer> array, ControlPanel controlPanel) {
         int length = array.size();
         if (length <= 1) return; // Base case for recursion
@@ -29,13 +30,13 @@ public class MergeSortVisualizer {
     private static void merge(List<Integer> leftArray, List<Integer> rightArray, List<Integer> array, ControlPanel controlPanel) {
         int leftSize = leftArray.size();
         int rightSize = rightArray.size();
-        
+
+        Timeline timeline = new Timeline();
         // Use arrays to make l, r, and i mutable inside the lambda
         final int[] i = {0};
         final int[] l = {0};
         final int[] r = {0};
     
-        Timeline timeline = new Timeline();
         final int totalSize = leftSize + rightSize;
     
         KeyFrame keyFrame = new KeyFrame(Duration.millis(10), e -> {

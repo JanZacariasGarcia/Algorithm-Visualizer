@@ -39,7 +39,6 @@ public class ControlPanel{
         // Initialize method
         @FXML
         public void initialize() {
-            // Initial data for the chart
             Random rand = new Random();
             //populate array with corresponding size
             for (int i = 0; i < 50; i++){
@@ -119,17 +118,13 @@ public class ControlPanel{
     }
     public void bb (ActionEvent e) throws InterruptedException{
         BubbleSortVisualizer.sort(array, this);
-        // drawBarChart(Color.GREEN);
     }
     public void ins (ActionEvent e) throws InterruptedException{
         InsertionSortVisualizer.sort(array,this);
-        // drawBarChart(Color.GREEN);
+
     }
     public void mer (ActionEvent e) throws InterruptedException{
         MergeSortVisualizer.sort(array, this);
-    }
-    public void startSort (ActionEvent e){
-
     }
     public void updateBarChart(){
         array.clear();

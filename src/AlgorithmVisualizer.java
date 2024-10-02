@@ -52,13 +52,6 @@ public class AlgorithmVisualizer extends Application {
     }
 
     public static void main(String[] args) {
-        // launch(args);
         Application.launch(args);
-        // BubbleSortVisualizer array = new BubbleSortVisualizer(arrayi);
-        // int [] abc = array.getSortedArray(arrayi);
-        // for (int i : abc){
-        //     System.out.print(i + " ");
-        // }
-        
     }
 }

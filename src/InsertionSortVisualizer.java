@@ -9,12 +9,10 @@ import javafx.util.Duration;
 
 public class InsertionSortVisualizer {
     static void sort(List<Integer> array, ControlPanel controlPanel) {
-        // Timeline to handle each sorting step
-        Timeline timeline = new Timeline();
-
         // Variables to track the outer and inner loop progress
         final int[] i = {1}; // Start at index 1 as per insertion sort
         final int[] j = {0}; // To track inner loop
+        Timeline timeline = new Timeline();
 
         // Temp variable to store the element being inserted
         final int[] temp = {array.get(i[0])};

@@ -6,13 +6,12 @@ import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
 public class BubbleSortVisualizer {
-        
         public static void sort(List<Integer> array, ControlPanel controlPanel) {
         // Create a new Timeline for sorting animation
-        Timeline timeline = new Timeline();
         int arraySize = array.size();
         final int[] i = {0}; // Track outer loop index
         final int[] j = {0}; // Track inner loop index
+        Timeline timeline = new Timeline();
 
         KeyFrame keyFrame = new KeyFrame(Duration.millis(10), e -> {
             // If outer loop is complete, stop the timeline
