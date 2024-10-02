@@ -2,7 +2,15 @@
     "java.project.sourcePaths": ["src"],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "lib/**/*.jar"
+        "path/to/javafx-sdk/lib/**/*.jar",
+        "/Users/jan/Downloads/javafx-sdk-23/lib/javafx.swing.jar",
+        "/Users/jan/Downloads/javafx-sdk-23/lib/javafx-swt.jar",
+        "/Users/jan/Downloads/javafx-sdk-23/lib/javafx.base.jar",
+        "/Users/jan/Downloads/javafx-sdk-23/lib/javafx.controls.jar",
+        "/Users/jan/Downloads/javafx-sdk-23/lib/javafx.fxml.jar",
+        "/Users/jan/Downloads/javafx-sdk-23/lib/javafx.graphics.jar",
+        "/Users/jan/Downloads/javafx-sdk-23/lib/javafx.media.jar",
+        "/Users/jan/Downloads/javafx-sdk-23/lib/javafx.web.jar"
     ],
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#009700",
